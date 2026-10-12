@@ -1,4 +1,6 @@
+import ReadButton from '@/components/bookDetails/ReadButton';
 import { IBook } from '@/types/books.type';
+import Link from 'next/link';
 import React from 'react';
 
 interface BookDetailpageprops{
@@ -117,11 +119,10 @@ return (
 
           {/* Buttons - Design Only */}
           <div className="mt-8 flex flex-wrap gap-4">
-            <button className="rounded-full bg-green-700 px-8 py-3 font-medium text-white transition hover:bg-green-800">
-              Read
-            </button>
-
-            <button className="rounded-full border border-gray-300 px-8 py-3 font-medium text-gray-700 transition hover:bg-gray-50">
+         
+    
+           <ReadButton book = {book} />
+          <button className="rounded-full border border-gray-300 px-8 py-3 font-medium text-gray-700 transition hover:bg-gray-50">
               Wishlist
             </button>
           </div>
