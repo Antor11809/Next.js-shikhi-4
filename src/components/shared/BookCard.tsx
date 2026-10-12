@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 interface IBookCardprops{
@@ -14,8 +15,8 @@ const BookCard = ({book}:IBookCardprops) => {
             {/* Book Image */}
             <div className="flex h-64 items-center justify-center overflow-hidden rounded-xl bg-green-50 p-6">
                
-              <Image
-               src= ""
+              <img
+               src= {book.image}
                 alt="Book Cover"
                 className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                 width={600}
@@ -26,7 +27,7 @@ const BookCard = ({book}:IBookCardprops) => {
 
             {/* Tags */}
             <div className="mt-5 flex flex-wrap gap-2">
-              {book.tags.map((tag) => (
+              {book.tags?.map((tag) => (
                 <span
                   key={tag}
                   className="rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700"
@@ -66,10 +67,12 @@ const BookCard = ({book}:IBookCardprops) => {
             </div>
 
             {/* Button */}
+          <Link href = {`/books/${book.bookId}`}>
             <button className="mt-6 w-full rounded-xl bg-green-700 py-3 font-medium text-white transition-colors duration-300 hover:bg-green-800">
               View Details →
             </button>
 
+          </Link>
           </div>
     );
 };

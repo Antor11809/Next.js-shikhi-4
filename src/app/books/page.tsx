@@ -2,7 +2,7 @@ const BooksPage = () => {
   return (
     <div>
       <h1>Welcome to Books Page</h1>
-      <p>[browser] An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string. 
+      <p>Hi i am antor i am doing rogramming and learning how to do it i started my journey with programming hero.  [browser] An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string. 
 [browser] An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string. 
 [browser] An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string. 
 [browser] An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string. 
@@ -77,6 +77,7 @@ An empty string ("") was passed to the src attribute. This may cause the browser
 [browser] Image is missing required "src" property: [object HTMLImageElement] 
 [browser] Image is missing required "src" property: [object HTMLImageElement] 
 [browser] Image is missing required "src" property: [object HTMLImageElement] </p>
+
     </div>
   );
 };
