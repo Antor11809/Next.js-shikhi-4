@@ -1,4 +1,5 @@
 import ReadButton from '@/components/bookDetails/ReadButton';
+import WishListButton from '@/components/bookDetails/WishButton';
 import { IBook } from '@/types/books.type';
 import Link from 'next/link';
 import React from 'react';
@@ -122,9 +123,7 @@ return (
          
     
            <ReadButton book = {book} />
-          <button className="rounded-full border border-gray-300 px-8 py-3 font-medium text-gray-700 transition hover:bg-gray-50">
-              Wishlist
-            </button>
+            <WishListButton book={book} />
           </div>
 
         </div>

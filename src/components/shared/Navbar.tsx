@@ -36,15 +36,16 @@ const Navbar = () => {
     
 
   </div>
-  <div className="navbar-center hidden lg:flex mt-6">
-    <ul className="menu menu-horizontal px-1">
-      <li><Link href="/books">Home</Link></li>
-      <li>
-          <Link href="/books/listed-books">Listed Books</Link>
-        
-      </li>
-      <li><a>Pages to read</a></li>
-    </ul>
+  <div className="navbar-center hidden lg:flex mt-6 ">
+  <ul className="menu menu-horizontal px-1 gap-6">
+  <li className='justify-center'>
+    <Link href="/">Home</Link>
+  </li>
+  <li>
+    <Link href="/books">Listed Books</Link>
+  </li>
+  <li><a>Pages to read</a></li>
+</ul>
   </div>
   <div className="navbar-end gap-4">
     <button className="btn btn-success">Sign in</button>
