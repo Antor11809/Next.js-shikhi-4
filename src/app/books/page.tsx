@@ -5,17 +5,51 @@ import ListedBooksCard from "@/components/shared/ListedBooksCard";
 import WishBook from "@/components/shared/WishBook";
 import { BooksContext } from "@/context/BookContext";
 import { IBook } from "@/types/books.type";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const ListedBooks = () => {
      const {readbooks, wishlist} = useContext(BooksContext);
+     const [sortBy, setSortBy] = useState<"rating" | "pages" | "year">("pages");
 console.log(readbooks, wishlist  );
+
+const sortbooks = (books: IBook[]) => {
+  const sortedBooks = [...books]
+
+  if(sortBy === "rating"){
+    sortedBooks.sort((a, b)=> b.rating -a.rating)
+  } else if(sortBy === "pages"){
+    sortedBooks.sort((a, b)=> b.totalPages -a.totalPages)
+  } else if(sortBy === "year"){
+    sortedBooks.sort((a, b)=> b.yearOfPublishing -a.yearOfPublishing)
+  }
+  return sortedBooks;
+}
+
+const sortedReadBooks= sortbooks (readbooks);
+const sortedWishList= sortbooks (wishlist);
 
   return (
     <div className="container mx-auto py-[20px]">
       <h1 className="my-4 bg-amber-100 rounded-3xl py-16 font-bold text-4xl text-center mt-8">
         Listed Books
       </h1>
+<div className= "text-center">
+
+     
+      <select 
+      value ={sortBy}
+      onChange ={(e) => setSortBy(e.target.value as "rating" | "pages" | "year")}
+      defaultValue="Pick a Runtime"
+       className="select select-success">
+
+  <option disabled={true}>Sort by</option>
+  <option value={"rating"}>Rating</option>
+  <option value={"pages"}>Number of pages</option>
+  <option value={"year"}>Published year</option>
+</select>
+
+</div>
+
 
       <div className="tabs tabs-lift">
         <input
@@ -28,7 +62,7 @@ console.log(readbooks, wishlist  );
         <div className="tab-content bg-base-100 border-base-300 p-6">
       
 {
-  readbooks.length > 0 ? readbooks.map((book: IBook) => {
+  sortedReadBooks.length > 0 ? sortedReadBooks.map((book: IBook) => {
     return (
       <ListedBooksCard key={book.bookId} book={book}/>
     );
@@ -50,7 +84,7 @@ console.log(readbooks, wishlist  );
 <div className="tab-content bg-base-100 border-base-300 p-6">
 
 {
-  wishlist.length > 0 ? wishlist.map((book: IBook) => {
+  sortedWishList.length > 0 ? sortedWishList.map((book: IBook) => {
     return (
      <WishBook key={book.bookId} book={book} />
     );

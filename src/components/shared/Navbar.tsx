@@ -27,7 +27,7 @@ const Navbar = () => {
     </div>
 
 <div className='flex gap-1'>
-   <Image src={hero}/>
+   <Image src={hero} alt={"nai"}/>
     <a className="btn btn-ghost text-xl">Book Vibe</a>
 
 </div>

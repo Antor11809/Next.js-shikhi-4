@@ -9,7 +9,7 @@ const ReadButton = ({book}:{book: IBook}) => {
     const handleReadBook = () => {
         console.log("books  a click porse no tension, book")
         setReadBooks([...readbooks, book])
-        toast.success(`bal kisu buji na "${book.bookName}" `)
+        toast.success(`You Have Succesfully clicked "${book.bookName}" `)
     }
     return (
          <button className="rounded-full bg-green-700 px-8 py-3 font-medium text-white transition hover:bg-green-800" onClick={()=> handleReadBook()}>

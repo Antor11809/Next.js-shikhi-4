@@ -9,7 +9,7 @@ const WishListButton = ({book}:{book: IBook}) => {
     const handleAddtoWishlist = () => {
         console.log("books  a click porse no tension, {book.bookName}")
         setWishlist([...wishlist, book])
-        toast.success(`bal kisu buji na "${book.bookId}" `)
+        toast.success(`Wishlist E Add holo  "${book.bookName}" `)
     }
     return (
          <button className="rounded-full bg-green-700 px-8 py-3 font-medium text-white transition hover:bg-green-800" onClick={()=> handleAddtoWishlist()}>
