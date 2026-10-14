@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import BookCard from './../shared/BookCard';
+import { IBook } from "@/types/books.type";
 
 const getBooks = async () => {
   const res = await fetch("http://localhost:3000/booksData.json");
@@ -24,7 +25,7 @@ const Books = async () => {
 
       <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
 
-      {booksdata.map((book, ind) => (
+      {booksdata.map((book:IBook, ind:number) => (
   <BookCard key={ind} book={book} />
  ))}
       </div>

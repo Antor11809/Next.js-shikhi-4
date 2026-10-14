@@ -1,3 +1,4 @@
+import { IBook } from '@/types/books.type';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -27,7 +28,7 @@ const BookCard = ({book}:IBookCardprops) => {
 
             {/* Tags */}
             <div className="mt-5 flex flex-wrap gap-2">
-              {book.tags?.map((tag) => (
+              {book.tags?.map((tag:string) => (
                 <span
                   key={tag}
                   className="rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700"
